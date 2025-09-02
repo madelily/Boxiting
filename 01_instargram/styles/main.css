@@ -1,0 +1,310 @@
+.main-container {
+  background-color: #ffffff;
+  margin-top: 44px;
+  margin-bottom: 44px;
+  display: flex;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 935px;
+  padding: 0 0 8px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.content {
+  width: 100%;
+  max-width: 614px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.stories {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.stories::after {
+  content: ""; /*자동저장하니 ''가 ""으로 바뀜*/
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #dbdbdb;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.story {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.story__avatar {
+  position: relative;
+}
+
+.story__border {
+  width: 64px;
+  height: 64px;
+  fill: none;
+  stroke: #c7c7c7;
+  stroke-width: 1.5;
+}
+
+.story__picture {
+  position: absolute; /* 박스내용이 오버되도 스토리박스가 딱 원하는 사이즈로 픽스 */
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* 중복 괄호로 위치가 안먹었던 것 찾아서 수정되니 제위치로 온다. 기호 잘 볼것 */
+  width: 56px;
+  height: 56px; /* 사용자 이미지 사이즈 지정 */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.storey__user {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-light);
+  max-width: 72px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* 아래에서 유저이미지와 테두리, 유저네임 정렬 */
+.stories__content {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 16px;
+  padding: 0 16px;
+  position: relative;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.stories__content::-webkit-scrollbar {
+  display: none;
+}
+
+/* post 스타일 적용 */
+.post {
+  width: 100%;
+  display: flex; /*포스트 박스안 내용을 가로로 붙이기 */
+  flex-direction: column; /* 다시 정렬 */
+  overflow: hidden;
+}
+
+.post__header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.post__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.post__user {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.post__user:hover {
+  text-decoration: underline;
+}
+
+.post__more-options {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.post__medias {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.post__medias::-webkit-scrollbar {
+  display: none;
+}
+
+.post__media {
+  width: 100%;
+  flex: none;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.post__footer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.post__buttons {
+  display: flex;
+  position: relative;
+}
+
+.post__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  padding: 8px;
+}
+
+.post__button--align-right {
+  margin-left: auto;
+}
+
+.post__infos {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+  gap: 10px;
+}
+
+.post__likes,
+.post__description {
+  display: flex;
+}
+
+.post__likes {
+  align-items: center;
+  gap: 6px;
+}
+
+.post__likes-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.post__likes span,
+.post__description span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #262626;
+}
+
+.post__likes a,
+.post__description a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  text-decoration: none;
+}
+
+.post__name--underline:hover {
+  text-decoration: underline;
+}
+
+.post__date-time {
+  font-size: 10px;
+  font-weight: 400;
+  color: #999999;
+  text-transform: uppercase; /* 대문자로만 표현 */
+}
+
+/* 미디어쿼리  */
+@media (min-width: 620px) {
+  .content-container {
+    padding: 30px 0 24px;
+  }
+  .content {
+    gap: 24px;
+  }
+  .stories {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+  }
+  .posts {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    background-color: #fafafa;
+  }
+  .content {
+    margin: unset; /* 초기값 또는 상속값으로 되돌리기 */
+  }
+}
+
+@media (min-width: 620px) {
+  .content-container {
+    padding: 30px 0 24px;
+  }
+  .content {
+    gap: 24px;
+  }
+  .stories {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+  }
+  .stories::after {
+    content: none;
+  }
+  .posts {
+    gap: 24px;
+  }
+  .post {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+  }
+  .post__footer {
+    padding: 4px 8px 12px;
+  }
+  .post__date-time {
+    margin-top: 6px;
+  }
+}

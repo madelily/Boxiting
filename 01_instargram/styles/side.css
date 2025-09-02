@@ -1,0 +1,201 @@
+/* side menu */
+.side-menu {
+  max-width: 290px;
+  position: fixed;
+  left: 50%;
+  top: 84px;
+  transform: translateX(calc(-50% + 322px));
+  display: none;
+  flex-direction: column;
+}
+
+.side-menu__user-profile {
+  display: flex; /* 한줄정렬 */
+  align-items: center; /* 높이기준 가운데정렬 */
+  margin: 20px 0 22px;
+}
+
+.side-menu__user-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.side-menu__user-info {
+  display: flex; /*플렉스박스 레이아웃 사용*/
+  flex-direction: column; /* 기둥 정렬 - 세로방향으로 쌓임  */
+  align-items: flex-start; /* 교차 축 가로에서 시작점 왼쪽에 맞춰 정렬 */
+  flex: 1; /*부모 컨테이너 내에서 남은 공간을 1의 비율로 차지*/
+  gap: 4px; /*자식 요소들 4간견 부여 */
+}
+
+.side-menu__user-info a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  text-decoration: none;
+  text-transform: lowercase; /*소문자*/
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.side-menu__user-info span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.side-menu__user-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0093f5;
+}
+
+.side-menu__suggestions-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu__suggestions-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-menu__suggestions-header h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #999999;
+}
+
+.side-menu__suggestions-header button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.side-menu__suggestion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 16px 0 24px;
+  padding-left: 4px;
+}
+
+.side-menu__suggestion {
+  display: flex;
+  align-items: center;
+}
+
+.side-menu__suggestion-avater {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.side-menu__suggestion-info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 1;
+  gap: 2px;
+}
+
+.side-menu__suggestion-info a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  text-decoration: none;
+  text-transform: lowercase;
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.side-menu__suggestion-info a:hover {
+  text-decoration: underline;
+}
+
+.side-menu__suggestion-info span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.side-menu__suggestion-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0093f5;
+  flex-shrink: 0;
+}
+
+.side-menu__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.side-menu__footer-links {
+  display: flex;
+}
+
+.side-menu__footer-list {
+  display: flex;
+  list-style: none;
+}
+
+.side-menu__footer-item {
+  display: inline-block;
+}
+
+.side-menu__footer-item:not(:last-of-type)::after {
+  content: "\00B7";
+  margin: 0 0.5px;
+}
+
+.side-menu__footer-item,
+.side-menu__footer-link,
+.side-menu__footer-copyright {
+  font-size: 11px;
+  font-weight: 400;
+  color: #999999;
+  text-decoration: none;
+}
+
+.side-menu__footer-copyright {
+  text-transform: uppercase;
+}
+
+/* 사이드 프로파일 버튼  */
+
+@media (min-width: 1024px) {
+  .side-menu {
+    display: flex;
+  }
+}
